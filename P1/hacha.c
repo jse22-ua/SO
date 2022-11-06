@@ -18,7 +18,7 @@ int main(int argc, char *argv[]){
         int count = 0;
         while(read(read_file,&piece,nbytes)){
             if(fork()==0){
-               char copypiece[nbytes];
+		 char copypiece[nbytes];
                char text[10];
                sleep(5);
                close(fd[1]);
@@ -31,13 +31,16 @@ int main(int argc, char *argv[]){
                close(write_file);
 
                count ++;
-
+               break;
+               
 
             }
             else{
+               
                 close(fd[0]);
                 
                 write(fd[1],&piece,nbytes);
+
                 
             }
             close(read_file);
