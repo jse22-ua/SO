@@ -30,7 +30,7 @@ int main(int argc, char *argv[]){
             printf("Soy el proceso B: mi pid es %d. Mi padre es %d. Mi abuelo es %d.\n", pids[1],pids[0],pid_arb);
                     
             for(int j=0;j<3;j++){
-                    if(fork()==0){
+                    if(fork()!=0){
 
                         switch(j){
                             case 0: // Proceso X
